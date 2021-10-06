@@ -81,8 +81,8 @@ const forms = () => {
             postData(api, formData)
                 .then(res => {
                     console.log(res);
-                    statusImg.setAttribute('src', message.spinner);
-                    statusMessage.textContent = message.success;
+                    statusImg.setAttribute('src', );
+                    textMessage.textContent = message.success;
                 })
                 .catch(() => {
                     statusImg.setAttribute('src', message.fail);
