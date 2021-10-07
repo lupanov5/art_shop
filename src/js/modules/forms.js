@@ -81,7 +81,7 @@ const forms = () => {
             postData(api, formData)
                 .then(res => {
                     console.log(res);
-                    statusImg.setAttribute('src', );
+                    statusImg.setAttribute('src', message.ok);
                     textMessage.textContent = message.success;
                 })
                 .catch(() => {

@@ -1,8 +1,9 @@
+
 const mask = (selector) => {
 
     let setCursorPosition = (pos, elem) => {
         elem.focus();
-
+        
         if (elem.setSelectionRange) {
             elem.setSelectionRange(pos, pos);
         } else if (elem.createTextRange) {
@@ -13,16 +14,15 @@ const mask = (selector) => {
             range.moveStart('character', pos);
             range.select();
         }
-
     };
 
     function createMask(event) {
-        let matrix = '+7(___) ___ __ __',
+        let matrix = '+7 (___) ___ __ __',
             i = 0,
             def = matrix.replace(/\D/g, ''),
             val = this.value.replace(/\D/g, '');
 
-        if (def.length >= val) {
+        if (def.length >= val.length) {
             val = def;
         }
 
@@ -31,11 +31,11 @@ const mask = (selector) => {
         });
 
         if (event.type === 'blur') {
-            if (this.value.length === 2) {
+            if (this.value.length == 2) {
                 this.value = '';
-            } else {
-                setCursorPosition(this.value.length, this);
             }
+        } else {
+            setCursorPosition(this.value.length, this);
         }
     }
 
@@ -46,7 +46,6 @@ const mask = (selector) => {
         input.addEventListener('focus', createMask);
         input.addEventListener('blur', createMask);
     });
-
 };
 
 export default mask;
