@@ -5,6 +5,7 @@ import sliders from "./modules/sliders";
 import checkTextInputs from "./modules/checkTextInputs";
 import showMoreStiles from "./modules/showMoreStiles";
 import calc from "./modules/calc";
+import filter from "./modules/filter";
 
 window.addEventListener('DOMContentLoaded', () => {
     'use strict';
@@ -17,5 +18,5 @@ window.addEventListener('DOMContentLoaded', () => {
     checkTextInputs('[name="message"]');
     showMoreStiles('#styles .row', '.button-styles');
     calc('#size', '#material', '#options', '.promocode', '.calc-price');
-
+    filter();
 });
